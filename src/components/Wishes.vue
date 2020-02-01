@@ -1,20 +1,20 @@
 <template>
   <div>
-    <div v-bind:key="wish.id" v-for="wish in wishes">
-      <WishItem v-bind:wish="wish" v-on:del-wish="$emit('del-wish', wish.id)" />
+    <div v-bind:key="theo.id" v-for="theo in theoes">
+      <TheoItem v-bind:theo="theo" v-on:del-theo="$emit('del-theo', theo.id)" />
     </div>
   </div>
 </template>
 
 <script>
-import WishItem from './WishItem.vue';
+import TheoItem from './TheoItem.vue';
 
 export default {
-  name: "Wishes",
+  name: "heoes",
   components: {
-    WishItem
+    theoItem
   },
-  props: ["wishes"]
+  props: ["theoes"]
 }
 </script>
 

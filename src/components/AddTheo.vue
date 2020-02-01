@@ -1,7 +1,7 @@
 <template>
   <div>
-    <form @submit="addWish">
-      <input type="text" v-model="title" name="title" placeholder="Add Wish...">
+    <form @submit="AddTheo">
+      <input type="text" v-model="title" name="title" placeholder="Add Theo...">
       <input type="submit" value="Submit" class="btn">
     </form>
   </div>
@@ -10,14 +10,14 @@
 <script>
 import uuid from 'uuid';
 export default {
-  name: "AddWish",
+  name: "AddTheo",
   data() {
     return {
       title: ''
     }
   },
   methods: {
-    addWish(e) {
+    AddTheo(e) {
       e.preventDefault();
       const newWish = {
         id: uuid.v4(),

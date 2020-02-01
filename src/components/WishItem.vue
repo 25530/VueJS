@@ -1,27 +1,27 @@
 <template>
-  <div class="wish-item" v-bind:class="{'is-complete':wish.completed}">
+  <div class="theo-item" v-bind:class="{'is-complete':theo.completed}">
     <p>
     <input type="checkbox" v-on:change="markComplete">
-    {{wish.title}}
-    <button @click="$emit('del-wish', wish.id)" class="del">x</button>
+    {{theo.title}}
+    <button @click="$emit('del-theo', theo.id)" class="del">x</button>
     </p>
   </div>
 </template>
 
 <script>
 export default {
-  name: "WishItem",
-  props: ["wish"],
+  name: "theoItem",
+  props: ["theo"],
   methods: {
     markComplete() {
-      this.wish.completed = !this.wish.completed;
+      this.theo.completed = !this.theo.completed;
     }
   }
 }
 </script>
 
 <style scoped>
-  .wish-item {
+  .theo-item {
     background: #f4f4f4;
     padding: 10px;
     border-bottom: 1px #ccc dotted;
