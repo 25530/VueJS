@@ -1,74 +1,79 @@
 <template>
   <div id="app">
-    <Header />
-    <AddWish v-on:add-wish="addWish" />
-    <Wishes v-bind:wishes="wishes" v-on:del-wish="deleteWish" />
+    <Header/>
+    <Addtheo v-on:add-theo="addtheo"/>
+    <theoes v-bind:theoes="theoes" v-on:del-theo="deletetheo"/>
   </div>
 </template>
 
 <script>
-import Header from './components/layout/Header';
-import Wishes from './components/Wishes';
-import AddWish from './components/AddWish';
+import Header from "./components/layout/Header";
+import theoes from "./components/theoes";
+import Addtheo from "./components/Addtheo";
+
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Header,
-    Wishes,
-    AddWish
+    theoes,
+    Addtheo
   },
   data() {
     return {
-      wishes: [
+      theoes: [
         {
           id: 1,
-          title: "iPad Pro",
+          title: "Theo 1",
           completed: false
         },
         {
           id: 2,
-          title: "iPhone Xs Max",
-          completed: true
+          title: "theo 2",
+          completed: false
         },
         {
           id: 3,
-          title: "Mac Pro",
-          completed: false
+          title: "Theo 3",
+          completed: true
         }
       ]
-    }
+    };
   },
   methods: {
-    deleteWish(id) {
-      this.wishes = this.wishes.filter(wish => wish.id !== id);
+    deletetheo(id) {
+      this.theoes = this.theoes.filter(theo => theo.id !== id);
     },
-    addWish(newWish) {
-      this.wishes = [...this.wishes, newWish];
+    addtheo(newtheo) {
+      this.theoes = [...this.theoes, newtheo];
     }
   }
-}
+};
 </script>
 
 <style>
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1,4;
-  }
-  .btn {
-    display: inline-block;
-    border: none;
-    background: #555;
-    color: #fff;
-    padding: 7px 20px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  .btn:hover {
-    background: #666;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 1, 4;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: #555;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #666;
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <form @submit="AddTheo">
-      <input type="text" v-model="title" name="title" placeholder="Add Theo...">
+    <form @submit="addtheo">
+      <input type="text" v-model="title" name="title" placeholder="Add theo...">
       <input type="submit" value="Submit" class="btn">
     </form>
   </div>
@@ -10,22 +10,22 @@
 <script>
 import uuid from 'uuid';
 export default {
-  name: "AddTheo",
+  name: "Addtheo",
   data() {
     return {
       title: ''
     }
   },
   methods: {
-    AddTheo(e) {
+    addtheo(e) {
       e.preventDefault();
-      const newWish = {
+      const newtheo = {
         id: uuid.v4(),
         title: this.title,
         completed: false
       }
       // Send up to parent
-      this.$emit('add-wish', newWish);
+      this.$emit('add-theo', newtheo);
       this.title = '';
     }
   }
